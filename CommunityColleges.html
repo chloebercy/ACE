@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Community Colleges</title>
+        <link rel="stylesheet" href="CSS.css" type="text/css" />
+        <link rel="stylesheet" href="Bootstrap.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Francois+One|Lato|Meera+Inimai|Oswald|Playfair+Display" rel="stylesheet">
+    </head>
+    <body>
+        <header class="container">
+            <div>
+                <div class="row">
+                    <ul class="nav nav-pills" style="padding-left: 100px">
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="index.html">Home</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="GPA.html">GPA Calculator</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Grade.html">Grade Drop or Increase</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Test.html">Future Tests/Assignments</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Final.html">Final Calculator</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <a class="h1" href="Bercy_Saini_Home.html">
+                        <h1 style="font-family: Francois One" class="text-center"><font size="50">ACE</font></h1>
+                    </a>
+                </div>
+            </div>
+        </header>
+            <div class="row">
+            <div class="col-md-12">
+                <div class= "stuff">
+                    <p><h1>Find College Courses</h1></p>
+                    <p>Select from the following Choices:</p>
+                    <p>A: Art, B: Business, C: Computer Science, E: Engineering, H: History, M: Music, P: Psycology, T: Theatre Art, W: Work Experience </p>
+                    <p><input type="text" id="A"=></input></p>
+                    <button onclick="coll()">Submit</button>
+                
+                    <script>
+                        function coll()
+                        {
+                            // renames all of the user inputs (so it is easier to use)
+                            var I= document.getElementById("A").value;
+                            var p;
+                        
+                            var A = [
+                                "INTRODUCTION TO DRAWING",
+                                "INTRO TO WATERCOLOR PAINTING",
+                                "2-D DESIGN",
+                                "3-D DESIGN",
+                                ]
+                            var B = [
+                                "FINANCIAL ACCOUNTING",
+                                "MANAGERIAL ACCOUNTING",
+                                "BUSINESS LAW",
+                                "INTERNATIONAL BUSINESS ",
+                                ]
+                            var C = [
+                                "ESSENTIAL COMPUTING SKILLS",
+                                "PROFESSIONAL COMMUNICATIONS ",
+                                "INTRO TO COMPUTING INFO TECH",
+                                "DATABASE CONCEPTS ",
+                                ]
+                            var E = [ ,
+                                "INTRODUCTION TO ENGINEERING",
+                                "COMP METHODS ENGINEER/ SCIENCE ",
+                                "ENGINEERING DESIGN GRAPHICS",
+                                ]
+                            var H = [
+                                "WESTERN CIVILIZATION TO 1600 ",
+                                "AMERICAN CULTURES OF CALI. ",
+                                "AMERICAN INDIAN HISTORY",
+                                "US WOMENS HISTORY"
+                                ]
+                            var M = [
+                                "INTRODUCTION TO MUSIC",
+                                "WORLD MUSIC",
+                                "BASIC MUSIC SKILLS",
+                                "HISTORY OF ROCK AND ROLL",
+                                ]
+                            var P = [
+                                "THEORIES OF COUNS: INTRO",
+                                "CAREER AND EDUC. PLANNING",
+                                "ABNORMAL PSYCHOLOGY ",
+                                "GENERAL PSYCHOLOGY",
+                                ]
+                            var T = [
+                                "THEORY/PRACTICE OF ACTING I",
+                                "BEGINNING IMPROVISATION",
+                                "INTERMEDIATE IMPROVISATION ",
+                                "INTRODUCTION TO DRAMATIC ARTS",
+                                ]
+                            var W = [
+                                "OCCUPATIONAL WORK EXP/INTERN.",
+                                "WORK EXPERIENCE",
+                                ]
+                            
+
+                            if ( I == "A") {
+                                p = A;
+                            } else if (I == "B") {
+                                p = B;
+                            } else if (I == "C") {
+                                p = C;
+                            } else if (I == "H") {
+                                p = H
+                            } else if (I == "M") {
+                                p = M
+                            } else if (I == "P") {
+                                p = P
+                            } else if (I == "T") {
+                                p = T
+                            } else if (I == "W") {
+                                p = W
+                            } else {
+                                p= "Please visit the Las Positas Website for additional information. ";
+                            }
+
+                            // prints output to the screen
+                            window.alert(p);
+                        }
+                    </script>
+                    <br>
+                    <p>Feel free to check out these websites to learn how to enroll in these courses: Concurrent Enrollement at <a href="http://www.laspositascollege.edu/admissions/concurrent.php">Las Positas</a> and at <a href="http://www.chabotcollege.edu/admissions/concurrent/">Chabot</a></p>
+                </div>
+            </div>
+        
+        </div>
+            
+    </body>
+</html>

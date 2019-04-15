@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPA Calculator</title>
+        <link rel="stylesheet" href="CSS.css" type="text/css" />
+        <link rel="stylesheet" href="Bootstrap.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Francois+One|Lato|Meera+Inimai|Oswald|Playfair+Display" rel="stylesheet">
+    </head>
+    <body>
+        <header class="container">
+            <div>
+                <div class="row">
+                    <ul class="nav nav-pills" style="padding-left: 100px">
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="index.html">Home</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="GPA.html">GPA Calculator</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Grade.html">Grade Drop or Increase</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Test.html">Future Tests/Assignments</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Final.html">Final Calculator</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <a class="h1" href="Bercy_Saini_Home.html">
+                        <h1 style="font-family: Francois One" class="text-center"><font size="50">ACE</font></h1>
+                    </a>
+                </div>
+                
+            </div>
+        </header>
+        
+        <div class="stuff">
+        <p>Grade #1 <input type="number" id="userInput1"=></input> </p>
+        <p>Grade #2 <input type="number" id="userInput2"=> </input></p>
+        <p>Grade #3 <input type="number" id="userInput3"=> </input></p>
+        <p>Grade #4 <input type="number" id="userInput4"=> </input></p>
+        <p>Grade #5 <input type="number" id="userInput5"=> </input></p>
+        <p>Grade #6 <input type="number" id="userInput6"=> </input></p>
+        <p># of Weighted Courses<input type="number" id="userInput7"=> </input></p>
+        <button onclick="test()">Submit</button>
+        <br></br>
+        <button on click="find()">Find Colleges</button>
+        <script>
+            var unWeighted;
+            var Weighted;
+            
+            function test()
+            {
+                // renames all of the user inputs (so it is easier to use)
+                var userInput1 = document.getElementById("userInput1").value;  
+                var userInput2 = document.getElementById("userInput2").value; 
+                var userInput3 = document.getElementById("userInput3").value;  
+                var userInput4 = document.getElementById("userInput4").value; 
+                var userInput5 = document.getElementById("userInput5").value;
+                var userInput6 = document.getElementById("userInput6").value;
+                var userInput7 = document.getElementById("userInput7").value;
+                
+                // calculates Unweighted and Weighted GPA
+                var total = +userInput1 + +userInput2 + +userInput3 + +userInput4 + +userInput5 + +userInput6;
+                unWeighted = +total / 6.0;
+                var totalW = +total + +userInput7;
+                Weighted = totalW/ 6.0;
+                
+                // prints output to the screen
+                window.alert("Unweighted GPA is " + unWeighted);
+                window.alert(" Weighted GPA is " + Weighted);
+                
+            }
+            /* 
+            function find()
+            {
+                var PRINTTHIS;
+                var First = [
+                    ""
+                    ];
+                var Second = [
+                    "",
+                    "",
+                    ""
+                    ] ;  
+                var Third = [
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                    ];
+                var Below = [ // DON'T WORK ON THIS UNTIL DOCUMENTATION IS DONE
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                    ];
+                    
+                if (unWeighted >= 4.0) {
+                    PRINTTHIS = First;
+                } else if (unWeighted >= 3.8 && unWeighted > 4.0) {
+                    PRINTTHIS = Second;
+                } else if (unWeighted >= 3.6 && unWeighted > 3.8) {
+                    PRINTTHIS = Third;
+                } else if (unWeighted >= 3.3 && unWeighted > 3.6) {
+                    PRINTTHIS = Below;
+                } else {
+                    PRINTTHIS = "Cannot be determined. We reccomend ACT classes or courses to improve your score. ACE encourages you to look at websites like KhanAcademy, Catalyst, Kaplan, etc.";
+                }    
+                    
+                
+            } */
+        </script>
+        </div>
+    </body>
+</html>

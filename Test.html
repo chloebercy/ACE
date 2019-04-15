@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Calculator</title>
+        <link rel="stylesheet" href="CSS.css" type="text/css" />
+        <link rel="stylesheet" href="Bootstrap.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Francois+One|Lato|Meera+Inimai|Oswald|Playfair+Display" rel="stylesheet">
+    </head>
+    <body>
+        <header class="container">
+            <div>
+                <div class="row">
+                    <ul class="nav nav-pills" style="padding-left: 100px">
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="index.html">Home</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="GPA.html">GPA Calculator</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Grade.html">Grade Drop or Increase</a>
+                        </li>
+                        <li class="col-sm-2">   
+                            <a style="color:black" class="pages" href="Test.html">Future Tests/Assignments</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Final.html">Final Calculator</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <a class="h1" href="Bercy_Saini_Home.html">
+                        <h1 style="font-family: Francois One" class="text-center"><font size="50">ACE</font></h1>
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="stuff">
+            <p>Total Grade Percentage <input type="number" id="TotalP"=></input>%</p>
+            <p>Desired Grade Percentage <input type="number" id="DesiredTotalP"=></input>%</p>
+            <p>Category Weight <input type="number" id="CategoryW"=> </input></p>
+            <p>Category Percentage <input type="number" id="CategoryP"=>(as a decimal between 0.0 and 1.0) </input></p>
+            <p>Category Total Points<input type="number" id="CategoryTotPoi"=> </input></p>
+            <p>Category Collected Points <input type="number" id="CategoryColPoi"=> </input></p>
+            <p>Weight of Your Final <input type="number" id="Final"=> </input></p>
+            <p>Test Total Points<input type="number" id="TestTotal"=> </input></p>
+            <button onclick="test()">Submit</button>
+        
+            <script>
+            function test()
+            {
+                // renames all of the user inputs (so it is easier to use)
+                var TotalP = document.getElementById("TotalP").value;  
+                var DesTotalP = document.getElementById("DesiredTotalP").value; 
+                var FakeCategoryW = document.getElementById("CategoryW").value; 
+                var CategoryP = document.getElementById("CategoryP").value;  
+                var CategoryTotPoi = document.getElementById("CategoryTotPoi").value; 
+                var CategoryColPoi = document.getElementById("CategoryColPoi").value;
+                var Final = document.getElementById("Final").value;
+                var TestTotal = document.getElementById("TestTotal").value;
+                
+                
+                var TotalWeights = 100 - +Final;
+                var CategoryW = (+FakeCategoryW / +TotalWeights) * 100;
+                
+                var NewAllTotalPoints = +TestTotal + +CategoryTotPoi;
+                var pdifference = +DesTotalP - +TotalP;
+                var pointdiff = +pdifference / +CategoryW; 
+                var pointdiffandCP = +pointdiff + +CategoryP;
+                var NewTotalPoints = +pointdiffandCP * +NewAllTotalPoints;
+                var testPoint = +NewTotalPoints - +CategoryColPoi;
+                
+                // NewTotalP = +TotalP + +difference;
+                
+                // prints output to the screen
+                window.alert("You need to get " + testPoint + " out of " + TestTotal);
+            }
+        </script>
+        </div>
+        
+    </body>
+</html>

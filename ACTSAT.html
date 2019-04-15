@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class= "b">
+    <head>
+        <title>Test Calculator</title>
+        <link rel="stylesheet" href="CSS.css" type="text/css" />
+        <link rel="stylesheet" href="Bootstrap.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Francois+One|Lato|Meera+Inimai|Oswald|Playfair+Display" rel="stylesheet">
+    </head>
+    <body >
+        <header class="container">
+            <div>
+                <div class="row">
+                    <ul class="nav nav-pills" style="padding-left: 100px">
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="index.html">Home</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="GPA.html">GPA Calculator</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Grade.html">Grade Drop or Increase</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Test.html">Future Tests/Assignments</a>
+                        </li>
+                        <li class="col-sm-2">
+                            <a style="color:black" class="pages" href="Final.html">Final Calculator</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <a class="h1" href="Bercy_Saini_Home.html">
+                        <h1 style="font-family: Francois One" class="text-center"><font size="50">ACE</font></h1>
+                    </a>
+                </div>
+            </div>
+        </header>
+    
+        <div class="row" id="b">
+            <div class="col-sm-6">
+                <div class= "stuff">
+                    <p>ACT Score <input type="number" id="userInputACT"=></input> </p>
+                    <button onclick="ACT()">Submit</button>
+                    <script>
+                        function ACT()
+                        {
+                            // renames all of the user inputs (so it is easier to use)
+                            var ACTScore= document.getElementById("userInputACT").value;
+                            var PRINTTHISACT;
+                        
+                            var FirstACT = [
+                                "Stanford (31)",
+                                "Columbia University (31)",
+                                "MIT (33)",
+                                "Harvard University (32)",
+                                "Yale University (31)",
+                                "Cornell University (30)",
+                                "UC Berkeley (30)",
+                                ]
+                            var SecondACT = [
+                                "New York University (29)",
+                                "UCLA (28)",
+                                "UT Austin (26)",
+                                "Penn State (25)",
+                                "Boston University (27)",
+                                "UC Santa Barbara (26)",
+                                "University of Washington (26)",
+                                ]
+                            var ThirdACT = [
+                                "UC Irvine (24)",
+                                "University of San Francisco (24)",
+                                "San Diego State University (22)",
+                                "Syracuse University (24)",
+                                "University of Delaware (24)"
+                                ]
+                            var BelowACT = [
+                                "San Francisco State University (18)",
+                                "CSU Chico (19)",
+                                "CSU Fullerton (19)",
+                                "Stockton University (19)",
+                                "CSU Sacramento (17)"
+                                ]
+                        
+                            if (ACTScore >= 30) {
+                                PRINTTHISACT = FirstACT;
+                            } else if (ACTScore >= 25 && ACTScore > 30) {
+                                PRINTTHISACT = SecondACT;
+                            } else if (ACTScore >= 20 && ACTScore > 24) {
+                                PRINTTHISACT = ThirdACT;
+                            } else if (ACTScore >= 16 && ACTScore > 20) {
+                                PRINTTHISACT = BelowACT
+                            } else {
+                                PRINTTHISACT = "Cannot be determined. We recommend ACT classes or courses to improve your score. ACE encourages you to look at websites like KhanAcademy, Catalyst, Kaplan, etc.";
+                            }
+                            
+                            
+                        
+                            // prints output to the screen
+                            window.alert(PRINTTHISACT);
+                        }
+                    </script>
+                </div>
+            </div>
+        
+        
+            <div class="col-sm-6">
+                <div class="stuff">
+                    <p>SAT Score <input type="number" id="userInput1"=></input> </p>
+                    <button onclick="SAT()">Submit</button>
+                    <script>
+                        function SAT()
+                        {
+                            // renames all of the user inputs (so it is easier to use)
+                            var SATScore= document.getElementById("userInput1").value;
+                            var PRINTTHIS;
+                        
+                            var First = [
+                                "Princeton (1540) ",
+                                "Harvard (1540) ",
+                                "Yale (1540) ",
+                                "University of Chicago (1520) ",
+                                "Columbia (1520) ",
+                                "Stanford (1520) "
+                                ]
+                            var Second = [
+                                "Cornell University (1470) ",
+                                "Berkley (1470) ",
+                                "Brown (1490) ",
+                                "Cornell (1480) ",
+                                "Johns Hopkins (1470) ",
+                                "Notre Dame (1480) ",
+                                ]
+                            var Third = [
+                                "UCLA (1370) ",
+                                "Boston University (1370) ",
+                                "George Washington University (1370) ",
+                                "Binghamton University (1350) ",
+                                "American University (1340) ",
+                                "Cal Poly (1300) ",
+                                ]
+                            var Below = [
+                                "Drexel University (1270) ",
+                                "Miami University (1290) ",
+                                "Pennsylvania State University (1260) ",
+                                "UC Davis (1290) ",
+                                "UC Irvine (1240) ",
+                                "UC Santa Cruz (1210) "
+                                ]
+                        
+                            if (+SATScore >= 1500) {
+                                PRINTTHIS = First;
+                            } else if (+SATScore > 1399 && +SATScore < 1500) {
+                                PRINTTHIS = Second;
+                            } else if (+SATScore >= 1300 && +SATScore < 1400) {
+                                PRINTTHIS = Third;
+                            } else if (+SATScore > 1100 && +SATScore < 1300){
+                                PRINTTHIS = Below;
+                            } else {
+                                PRINTTHIS = "Cannot be determined. We recommend SAT classes or courses to improve your score. ACE encourages you to look at websites like KhanAcademy, Catalyst, Kaplan, etc."
+                            }
+                        
+                            // prints output to the screen
+                            window.alert("Colleges we recommend: "+ PRINTTHIS);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

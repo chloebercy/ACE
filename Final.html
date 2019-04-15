@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ACE Final Calculator</title>
+        <link rel="stylesheet" href="CSS.css" type="text/css" />
+        <link rel="stylesheet" href="Bootstrap.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Dosis|Francois+One|Lato|Meera+Inimai|Oswald|Playfair+Display" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <div class="row">
+                <ul class="nav nav-pills" style="padding-left: 100px">
+                    <li class="col-sm-2">
+                        <a style="color:black" class="pages" href="index.html">Home</a>
+                    </li>
+                    <li class="col-sm-2">
+                        <a style="color:black" class="pages" href="GPA.html">GPA Calculator</a>
+                    </li>
+                    <li class="col-sm-2">
+                        <a style="color:black" class="pages" href="Grade.html">Grade Drop or Increase</a>
+                    </li>
+                    <li class="col-sm-2">
+                        <a style="color:black" class="pages" href="Test.html">Future Tests/Assignments</a>
+                    </li>
+                    <li class="col-sm-2">
+                        <a style="color:black" class="pages" href="Final.html">Final Calculator</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a class="h1" href="Bercy_Saini_Home.html">
+                    <h1 style="font-family: Francois One" class="text-center"><font size="50">ACE</font></h1>
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="stuff">
+            <p>Current Grade <input type="number" id="userInput1"=></input>%</p>
+            <p>Desired Grade <input type="number" id="userInput2"=> </input>%</p>
+            <p>Final Weight <input type="number" id="userInput3"=> </input>(as a decimal between 0.0 and 1.0)</p>
+            <button onclick="test()">Submit</button>
+            
+            <script>
+                function test()
+                {
+                    var userInput1 = document.getElementById("userInput1").value;  
+                    var userInput2 = document.getElementById("userInput2").value; 
+                    var userInput3 = document.getElementById("userInput3").value;  
+                    
+                    var WeightRest;
+                    var CGradePoints;
+                    var DesiredMinusCurrent;
+                    var FinalScore;
+                    
+                    WeightRest = 1.0 - +userInput3;
+                    CGradePoints = +WeightRest * +userInput1;
+                    DesiredMinusCurrent = +userInput2 - +CGradePoints;
+                    FinalScore = +DesiredMinusCurrent / +userInput3;
+                    
+                    
+                    
+                     // desired grade = ccgradepoints + finalscore*finalweight
+                     
+                    window.alert(" You will need a " + FinalScore + "%");
+                }
+            </script>
+        </div>
+    </body>
+</html>
